@@ -2,7 +2,6 @@
     "$id": "http://wavedrom.com/schemas#",
     "definitions": {
         "waveLane": {
-            "$id": "#waveLane",
             "type": "object",
             "properties": {
                 "name": { "type": "string" },
@@ -20,29 +19,26 @@
             }
         },
         "waveGroup": {
-            "$id": "#waveGroup",
             "type": "array",
             "items": {
                 "oneOf": [
                     { "type": "string" },
-                    { "$ref": "#waveLane" },
-                    { "$ref": "#waveGroup" }
+                    { "$ref": "#/definitions/waveLane" },
+                    { "$ref": "#/definitions/waveGroup" }
                 ]
             }
         },
         "textSpan": {
-            "$id": "#textSpan",
             "oneOf": [
                 { "type": "string" },
                 { "type": "array" }
             ]
         },
         "textNode" : {
-            "$id": "#textNode",
             "description": "head / foot note text of JSONML",
             "type": "object",
             "properties": {
-                "text": { "$ref": "#textSpan" },
+                "text": { "$ref": "#/definitions/textSpan" },
                 "tick": { "type": "number" },
                 "tock": { "type": "number" }
             }
@@ -54,13 +50,13 @@
             "type": "array",
             "items": {
                 "oneOf": [
-                    { "$ref": "#waveLane" },
-                    { "$ref": "#waveGroup" }
+                    { "$ref": "#/definitions/waveLane" },
+                    { "$ref": "#/definitions/waveGroup" }
                 ]
             }
         },
-        "head": { "$ref": "#textNode" },
-        "foot": { "$ref": "#textNode" },
+        "head": { "$ref": "#/definitions/textNode" },
+        "foot": { "$ref": "#/definitions/textNode" },
         "edge": {
             "type": "array",
             "items": { "type": "string" }
