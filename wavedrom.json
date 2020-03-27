@@ -25,8 +25,8 @@
             "items": {
                 "oneOf": [
                     { "type": "string" },
-                    { "$ref": "waveLane" },
-                    { "$ref": "waveGroup" }
+                    { "$ref": "#waveLane" },
+                    { "$ref": "#waveGroup" }
                 ]
             }
         },
@@ -42,7 +42,7 @@
             "description": "head / foot note text of JSONML",
             "type": "object",
             "properties": {
-                "text": { "$ref": "textSpan" },
+                "text": { "$ref": "#textSpan" },
                 "tick": { "type": "number" },
                 "tock": { "type": "number" }
             }
@@ -54,13 +54,13 @@
             "type": "array",
             "items": {
                 "oneOf": [
-                    { "$ref": "waveLane" },
-                    { "$ref": "waveGroup" }
+                    { "$ref": "#waveLane" },
+                    { "$ref": "#waveGroup" }
                 ]
             }
         },
-        "head": { "$ref": "textNode" },
-        "foot": { "$ref": "textNode" },
+        "head": { "$ref": "#textNode" },
+        "foot": { "$ref": "#textNode" },
         "edge": {
             "type": "array",
             "items": { "type": "string" }
