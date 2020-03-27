@@ -1,8 +1,8 @@
 {
-    "id": "http://wavedrom.com/schemas#",
+    "$id": "http://wavedrom.com/schemas#",
     "definitions": {
         "waveLane": {
-            "id": "#waveLane",
+            "$id": "#waveLane",
             "type": "object",
             "properties": {
                 "name": { "type": "string" },
@@ -20,7 +20,7 @@
             }
         },
         "waveGroup": {
-            "id": "#waveGroup",
+            "$id": "#waveGroup",
             "type": "array",
             "items": {
                 "oneOf": [
@@ -31,14 +31,14 @@
             }
         },
         "textSpan": {
-            "id": "#textSpan",
+            "$id": "#textSpan",
             "oneOf": [
                 { "type": "string" },
                 { "type": "array" }
             ]
         },
         "textNode" : {
-            "id": "#textNode",
+            "$id": "#textNode",
             "description": "head / foot note text of JSONML",
             "type": "object",
             "properties": {
